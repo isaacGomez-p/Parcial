@@ -15,11 +15,11 @@ public class Ventana extends JFrame{
 	}
 	public Ventana iniciar(){
 		
-		Dimension dims = new Dimension(750, 700);
+		Dimension dims = new Dimension(900, 900);
 		this.setSize(dims);
 		this.setPreferredSize(dims);
 		this.getContentPane( ).setLayout( new BorderLayout( ) );//ORGANIZAR ARRIBA
-		//this.setResizable(false); 
+		this.setResizable(false); 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		return this;
 //<<<<<<< Updated upstream

@@ -33,7 +33,7 @@ public class PanelIzquierdo extends JPanel{
 		add(etiqueta2, contenido);
 
 		JLabel foto = new JLabel("");
-		ImageIcon icono = new ImageIcon( "images/comer.png" );
+		ImageIcon icono = new ImageIcon( "img/juegos.jpg" );
 		foto.setHorizontalAlignment( JLabel.CENTER );
 		foto.setIcon(icono);
 		foto.setForeground(Color.BLACK);
@@ -43,9 +43,8 @@ public class PanelIzquierdo extends JPanel{
 		contenido.fill = GridBagConstraints.HORIZONTAL;
 		contenido.gridx = 0;
 		contenido.gridy = 0;
-		
-		
 		add(foto, contenido);
+		
 		JLabel etiqueta = new JLabel("NOMBRE  ");
 		etiqueta.setForeground(Color.BLACK);
 		contenido.fill = GridBagConstraints.HORIZONTAL;

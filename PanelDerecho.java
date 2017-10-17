@@ -81,10 +81,14 @@ public class PanelDerecho extends JPanel{
 		c.fill = GridBagConstraints.CENTER;
 		c.weightx=0.3;
 		c.weighty=0.3;
-		c.gridx=3;
+		c.gridx=2;
 		c.gridy=3;
 		add(mostrar,c);
 		
 	}
+public void primerPuesto() {
+	
+}
+
 }
 
