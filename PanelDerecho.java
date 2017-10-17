@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.border.Border;
@@ -107,12 +108,30 @@ public class PanelDerecho extends JPanel{
 
 	
 public static void primerPuesto(java.util.List<Medallista> lista) {
-	for(int i=0; i<lista.size();i++) {
-		if(lista.get(i).getPuesto()==1) {
-			primero.setText("Nombre"+lista.get(i)+"\nApellido:"+lista.get(i).getApellido()+"\nTipo:"+lista.get(i).getTipo()+"\nNumero:"+lista.get(i).getNumero()+"Puesto:"+lista.get(i).getPuesto());
-		}
-		
-	}
+	  mostrar.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+			try {
+				if(lista.size()<3) {
+					JOptionPane.showMessageDialog(null, "Ingrese tres medallistas antes de actualizar", "error", JOptionPane.ERROR_MESSAGE);
+				}
+				else {
+				for(int i=0; i<lista.size();i++) {
+					if(lista.get(i).getPuesto()==1) {
+						primero.setText("Nombre"+lista.get(i)+"\nApellido:"+lista.get(i).getApellido()+"\nTipo:"+lista.get(i).getTipo()+"\nNumero:"+lista.get(i).getNumero()+"\nEdad:"+lista.get(i).getEdad()+"\nPeso"+lista.get(i).getPeso()+"\nAltura"+lista.get(i).getAltura()+"\nCelular:"+lista.get(i).getCelular()+"\nDireccion"+lista.get(i).getDireccion()+"\nPuesto:"+lista.get(i).getPuesto());
+					}
+					else if(lista.get(i).getPuesto()==2){
+						//segundo.setText();
+					}
+				}
+				
+			}}
+				catch(java.lang.NullPointerException a ) {
+					
+				}
+			}
+			
+		});
+	
 	
 }
 

@@ -92,7 +92,7 @@ public class PanelIzquierdo extends JPanel{
 
 		
 		JComboBox selectoremp = new JComboBox();
-		selectoremp.setModel(new DefaultComboBoxModel(new String[] {"CC","TI","CE"}));
+		selectoremp.setModel(new DefaultComboBoxModel(new String[] {"Seleccione un tipo","CC","TI","CE"}));
 		selectoremp.setSelectedIndex(0);
 		contenido.fill = GridBagConstraints.HORIZONTAL;
 		contenido.weightx = 0.00003;
@@ -226,18 +226,29 @@ public class PanelIzquierdo extends JPanel{
 		contenido.gridwidth = 2;   //2 columns wide
 		contenido.gridy = 9;       //third row
 		add(mostrar, contenido);
-		
+		System.out.println(("---"+cajadetexto.getText()+"---"+cajadetexto1.getText()+"---"+selectoremp.getSelectedIndex()+"---"+Integer.parseInt(edad.getText())+"---"+Float.parseFloat(peso.getText())+"---"+Integer.parseInt(altura.getText())+"---"+Integer.parseInt(celular.getText())+"---"+direccion.getText()+"---"+selector.getSelectedIndex()));
 	
 	    registrar.addActionListener (new ActionListener(){
 				public void actionPerformed(ActionEvent e){  
 					try {
-	                            if(cajadetexto.getText().equals("") || cajadetexto1.getText().equals("") || numero.getText().equals("")|| edad.getText().equals("") || peso.getText().equals("") || altura.getText().equals("")|| celular.getText().equals("") || direccion.getText().equals("") ) {
+	                 if(cajadetexto.getText().equals("") || cajadetexto1.getText().equals("") || numero.getText().equals("")|| edad.getText().equals("") || peso.getText().equals("") || altura.getText().equals("")|| celular.getText().equals("") || direccion.getText().equals("")||selectoremp.getSelectedIndex()==0||selector.getSelectedIndex()==0 ) {
 						JOptionPane.showMessageDialog(null, "Error por favor complete las casillas", "error", JOptionPane.ERROR_MESSAGE); 
 					}
 	                            else{
 	                lista.add(new Medallista(cajadetexto.getText(),cajadetexto1.getText(),selectoremp.getSelectedIndex(),Integer.parseInt(edad.getText()),Float.parseFloat(peso.getText()),Integer.parseInt(altura.getText()),Integer.parseInt(celular.getText()),direccion.getText(),selector.getSelectedIndex()));
+	                System.out.println(("---"+cajadetexto.getText()+"---"+cajadetexto1.getText()+"---"+selectoremp.getSelectedIndex()+"---"+Integer.parseInt(edad.getText())+"---"+Float.parseFloat(peso.getText())+"---"+Integer.parseInt(altura.getText())+"---"+Integer.parseInt(celular.getText())+"---"+direccion.getText()+"---"+selector.getSelectedIndex()));
 					int g = selector.getSelectedIndex();
+					cajadetexto.setText(null);
+					cajadetexto1.setText(null);
+					selectoremp.setSelectedIndex(0);
+					edad.setText(null);
+					peso.setText(null);
+					altura.setText(null);
+					celular.setText(null);
+					direccion.setText(null);
+					selector.setSelectedIndex(0);
 					PanelDerecho.primerPuesto(lista);
+					
 	                            } 
 					}catch (java.lang.NumberFormatException s) {
 						JOptionPane.showMessageDialog(null, "Revisar los datos numericos", "error", JOptionPane.ERROR_MESSAGE); 
