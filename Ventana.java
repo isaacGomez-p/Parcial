@@ -4,6 +4,8 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 
 public class Ventana extends JFrame{
+	//static PanelIzquierdo panelIzquierdo;
+	static PanelDerecho panelDerecho;
 	public Ventana() {
 		this.iniciar();
 		componente();
@@ -20,11 +22,16 @@ public class Ventana extends JFrame{
 		//this.setResizable(false); 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		return this;
+//<<<<<<< Updated upstream
 		
 }
+//=======
+	
+	
+//>>>>>>> Stashed changes
 	public void componente() {
-		PanelIzquierdo panelIzquierdo = new PanelIzquierdo();
-		add(panelIzquierdo,BorderLayout.NORTH);
+		//PanelIzquierdo panelIzquierdo = new PanelIzquierdo();
+		//add(panelIzquierdo,BorderLayout.NORTH);
 		
 		PanelDerecho panelDerecho = new PanelDerecho();
 		add(panelDerecho,BorderLayout.EAST);
