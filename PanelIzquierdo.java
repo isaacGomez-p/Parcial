@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Iterator;
+import java.util.List;
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultComboBoxModel;
@@ -10,6 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
@@ -17,7 +19,7 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.border.Border;
 
 public class PanelIzquierdo extends JPanel{
-	
+	static List<Medallista> lista;
 	public PanelIzquierdo() {
 		Border borde = BorderFactory.createTitledBorder( "REGISTRO DE MEDALLISTAS" );
 	    setBorder( borde );
@@ -226,6 +228,23 @@ public class PanelIzquierdo extends JPanel{
 		add(mostrar, contenido);
 		
 	
+	    registrar.addActionListener (new ActionListener(){
+				public void actionPerformed(ActionEvent e){  
+					try {
+	                            if(cajadetexto.getText().equals("") || cajadetexto1.getText().equals("") || numero.getText().equals("")|| edad.getText().equals("") || peso.getText().equals("") || altura.getText().equals("")|| celular.getText().equals("") || direccion.getText().equals("") ) {
+						JOptionPane.showMessageDialog(null, "Error por favor complete las casillas", "error", JOptionPane.ERROR_MESSAGE); 
+					}
+	                            else{
+	               
+					lista.add(new Medallista(cajadetexto.getText(),cajadetexto1.getText(),selectoremp.getToolTipText(),Integer.parseInt(edad.getText()),Float.parseFloat(peso.getText()),Integer.parseInt(altura.getText()),Integer.parseInt(celular.getText()),direccion.getText(),selector.getToolTipText())); 
+	                            } 
+					}catch (java.lang.NumberFormatException s) {
+						JOptionPane.showMessageDialog(null, "Revisar los datos numericos", "error", JOptionPane.ERROR_MESSAGE); 
+					}
+	                            
+	                             
+				}}
+			);
 		
 		
 		
