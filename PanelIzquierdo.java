@@ -1,4 +1,5 @@
+import javax.swing.JPanel;
 
-public class PanelIzquierdo {
+public class PanelIzquierdo  extends JPanel{
 
 }

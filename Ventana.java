@@ -11,19 +11,22 @@ public class Ventana extends JFrame{
 		setVisible(true);
 		setLocationRelativeTo(null);
 	}
-	public Ventana iniciar() {
-		Dimension d = new Dimension(1000,700);
-		this.setSize(d);
-		this.setPreferredSize(d);
+	public Ventana iniciar(){
 		
-		this.getContentPane().setLayout(new BorderLayout());
+		Dimension dims = new Dimension(750, 700);
+		this.setSize(dims);
+		this.setPreferredSize(dims);
+		this.getContentPane( ).setLayout( new BorderLayout( ) );//ORGANIZAR ARRIBA
+		//this.setResizable(false); 
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		return this;
-	}
-	public void componente() {
-		panelIzquierdo = new PanelIzquierdo();
-		add(panelIzquierdo,BorderLayout.WEST);
 		
-		panelDerecho = new PanelDerecho();
+}
+	public void componente() {
+		PanelIzquierdo panelIzquierdo = new PanelIzquierdo();
+		add(panelIzquierdo,BorderLayout.NORTH);
+		
+		PanelDerecho panelDerecho = new PanelDerecho();
 		add(panelDerecho,BorderLayout.EAST);
 	}
 }
