@@ -98,9 +98,111 @@ public class PanelIzquierdo extends JPanel{
 		contenido.gridy = 3;
 		add(selectoremp, contenido);
 		
-
+		JLabel etiqueta4 = new JLabel("NUMERO: ");
+		etiqueta3.setForeground(Color.BLACK);
+		contenido.fill = GridBagConstraints.HORIZONTAL;	
+		contenido.gridx = 0;
+		contenido.gridy = 4;
+		add(etiqueta4, contenido);
 		
-	
+		JTextField numero = new JTextField();
+		cajadetexto1.setText("");
+		contenido.fill = GridBagConstraints.HORIZONTAL;
+		contenido.weightx = 0.03;
+		contenido.gridx = 1;
+		contenido.gridy = 4;
+		add(numero, contenido);
+		
+		JLabel etiqueta5 = new JLabel("EDAD: ");
+		etiqueta3.setForeground(Color.BLACK);
+		contenido.fill = GridBagConstraints.HORIZONTAL;	
+		contenido.gridx = 0;
+		contenido.gridy = 5;
+		add(etiqueta5, contenido);
+		
+		JTextField edad = new JTextField();
+		cajadetexto1.setText("");
+		contenido.fill = GridBagConstraints.HORIZONTAL;
+		contenido.weightx = 0.03;
+		contenido.gridx = 1;
+		contenido.gridy = 5;
+		add(edad, contenido);
+		
+		JLabel etiqueta6 = new JLabel("PESO: ");
+		etiqueta3.setForeground(Color.BLACK);
+		contenido.fill = GridBagConstraints.HORIZONTAL;	
+		contenido.gridx = 0;
+		contenido.gridy = 6;
+		add(etiqueta6, contenido);
+		
+		JTextField peso = new JTextField();
+		cajadetexto1.setText("");
+		contenido.fill = GridBagConstraints.HORIZONTAL;
+		contenido.weightx = 0.03;
+		contenido.gridx = 1;
+		contenido.gridy = 6;
+		add(peso, contenido);
+		
+		JLabel etiqueta7 = new JLabel("ALTURA: ");
+		etiqueta3.setForeground(Color.BLACK);
+		contenido.fill = GridBagConstraints.HORIZONTAL;	
+		contenido.gridx = 0;
+		contenido.gridy = 7;
+		add(etiqueta7, contenido);
+		
+		JTextField altura = new JTextField();
+		cajadetexto1.setText("");
+		contenido.fill = GridBagConstraints.HORIZONTAL;
+		contenido.weightx = 0.03;
+		contenido.gridx = 1;
+		contenido.gridy = 7;
+		add(altura, contenido);
+		
+		JLabel etiqueta8 = new JLabel("CELULAR: ");
+		etiqueta3.setForeground(Color.BLACK);
+		contenido.fill = GridBagConstraints.HORIZONTAL;	
+		contenido.gridx = 0;
+		contenido.gridy = 8;
+		add(etiqueta8, contenido);
+		
+		JTextField celular = new JTextField();
+		cajadetexto1.setText("");
+		contenido.fill = GridBagConstraints.HORIZONTAL;
+		contenido.weightx = 0.03;
+		contenido.gridx = 1;
+		contenido.gridy = 8;
+		add(celular, contenido);
+		
+		JLabel etiqueta9 = new JLabel("DIRECCION: ");
+		etiqueta3.setForeground(Color.BLACK);
+		contenido.fill = GridBagConstraints.HORIZONTAL;	
+		contenido.gridx = 0;
+		contenido.gridy = 9;
+		add(etiqueta9, contenido);
+		
+		JTextField direccion = new JTextField();
+		cajadetexto1.setText("");
+		contenido.fill = GridBagConstraints.HORIZONTAL;
+		contenido.weightx = 0.03;
+		contenido.gridx = 1;
+		contenido.gridy = 9;
+		add(direccion, contenido);
+		
+		JLabel etiqueta10 = new JLabel("PUESTO: ");
+		etiqueta3.setForeground(Color.BLACK);
+		contenido.fill = GridBagConstraints.HORIZONTAL;	
+		contenido.gridx = 0;
+		contenido.gridy = 10;
+		add(etiqueta10	, contenido);
+		
+		JComboBox selector = new JComboBox();
+		selector.setModel(new DefaultComboBoxModel(new String[] {"PRIMER PUESTO","SEGUNDO PUESTO","TERCER PUESTO"}));
+		selectoremp.setSelectedIndex(0);
+		contenido.fill = GridBagConstraints.HORIZONTAL;
+		contenido.weightx = 0.00003;
+		contenido.gridx = 1;
+		contenido.gridy = 10;
+		add(selector, contenido);
 		
 		JButton registrar = new JButton();
 		registrar.setText("REGISTRAR");
@@ -108,7 +210,7 @@ public class PanelIzquierdo extends JPanel{
 		contenido.weighty = 0.3;
 		contenido.weightx = 0.3;
 		contenido.gridx = 1;
-		contenido.gridy = 8;
+		contenido.gridy = 11;
 		add(registrar, contenido);
 
 		
@@ -128,9 +230,8 @@ public class PanelIzquierdo extends JPanel{
 		
 		
 		
-		
+	}		
 	}
 
 
-}
 
