@@ -30,8 +30,8 @@ public class Ventana extends JFrame{
 	
 //>>>>>>> Stashed changes
 	public void componente() {
-		//PanelIzquierdo panelIzquierdo = new PanelIzquierdo();
-		//add(panelIzquierdo,BorderLayout.NORTH);
+		PanelIzquierdo panelIzquierdo = new PanelIzquierdo();
+		add(panelIzquierdo,BorderLayout.NORTH);
 		
 		PanelDerecho panelDerecho = new PanelDerecho();
 		add(panelDerecho,BorderLayout.EAST);
