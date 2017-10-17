@@ -2,6 +2,7 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -19,7 +20,7 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.border.Border;
 
 public class PanelIzquierdo extends JPanel{
-	static List<Medallista> lista;
+	static ArrayList<Medallista> lista;
 	public PanelIzquierdo() {
 		Border borde = BorderFactory.createTitledBorder( "REGISTRO DE MEDALLISTAS" );
 	    setBorder( borde );
@@ -197,7 +198,7 @@ public class PanelIzquierdo extends JPanel{
 		add(etiqueta10	, contenido);
 		
 		JComboBox selector = new JComboBox();
-		selector.setModel(new DefaultComboBoxModel(new String[] {"PRIMER PUESTO","SEGUNDO PUESTO","TERCER PUESTO"}));
+		selector.setModel(new DefaultComboBoxModel(new String[] {"Sleecione un puessto","PRIMER PUESTO","SEGUNDO PUESTO","TERCER PUESTO"}));
 		selectoremp.setSelectedIndex(0);
 		contenido.fill = GridBagConstraints.HORIZONTAL;
 		contenido.weightx = 0.00003;
@@ -234,8 +235,9 @@ public class PanelIzquierdo extends JPanel{
 						JOptionPane.showMessageDialog(null, "Error por favor complete las casillas", "error", JOptionPane.ERROR_MESSAGE); 
 					}
 	                            else{
-	               
-					lista.add(new Medallista(cajadetexto.getText(),cajadetexto1.getText(),selectoremp.getToolTipText(),Integer.parseInt(edad.getText()),Float.parseFloat(peso.getText()),Integer.parseInt(altura.getText()),Integer.parseInt(celular.getText()),direccion.getText(),selector.getToolTipText())); 
+	                lista.add(new Medallista(cajadetexto.getText(),cajadetexto1.getText(),selectoremp.getSelectedIndex(),Integer.parseInt(edad.getText()),Float.parseFloat(peso.getText()),Integer.parseInt(altura.getText()),Integer.parseInt(celular.getText()),direccion.getText(),selector.getSelectedIndex()));
+					int g = selector.getSelectedIndex();
+					PanelDerecho.primerPuesto(lista);
 	                            } 
 					}catch (java.lang.NumberFormatException s) {
 						JOptionPane.showMessageDialog(null, "Revisar los datos numericos", "error", JOptionPane.ERROR_MESSAGE); 
@@ -244,7 +246,7 @@ public class PanelIzquierdo extends JPanel{
 	                             
 				}}
 			);
-		
+	
 		
 		
 		

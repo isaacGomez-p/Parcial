@@ -2,6 +2,10 @@
 import java.awt.BorderLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.List;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -9,17 +13,20 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.border.Border;
 
+
 public class PanelDerecho extends JPanel{
-	
+	static JTextArea primero, segundo, tercero;
+	static JButton mostrar;
 	public PanelDerecho() {
 		setLayout(new GridBagLayout());
 		Border b= BorderFactory.createTitledBorder("Datos");
 		setBorder(b);
 		GridBagConstraints c = new GridBagConstraints();
 		
-		JList primero = new JList();
+		primero = new JTextArea();
 		c.fill = GridBagConstraints.CENTER;
 		c.weightx= 0.3;
 		c.weighty=0.3;
@@ -57,7 +64,7 @@ public class PanelDerecho extends JPanel{
 		c.gridy=1;
 		add(imagen2,c);
 		
-		JList tercero = new JList();
+		JTextArea tercero = new JTextArea();
 		c.fill = GridBagConstraints.CENTER;
 		c.weightx= 0.3;
 		c.weighty=0.3;
@@ -76,7 +83,7 @@ public class PanelDerecho extends JPanel{
 		c.gridy=2;
 		add(imagen3,c);
 		
-		JButton mostrar = new JButton();
+		mostrar = new JButton();
 		mostrar.setText("Mostrar Medallistas");
 		c.fill = GridBagConstraints.CENTER;
 		c.weightx=0.3;
@@ -85,8 +92,27 @@ public class PanelDerecho extends JPanel{
 		c.gridy=3;
 		add(mostrar,c);
 		
+	    mostrar.addActionListener(new ActionListener(){
+				public void actionPerformed(ActionEvent e) {
+				try {
+					//primerPuesto(lista);
+				}
+					catch(java.lang.NullPointerException a ) {
+						
+					}
+				}
+			});
+		
 	}
-public void primerPuesto() {
+
+	
+public static void primerPuesto(java.util.List<Medallista> lista) {
+	for(int i=0; i<lista.size();i++) {
+		if(lista.get(i).getPuesto()==1) {
+			primero.setText("Nombre"+lista.get(i)+"\nApellido:"+lista.get(i).getApellido()+"\nTipo:"+lista.get(i).getTipo()+"\nNumero:"+lista.get(i).getNumero()+"Puesto:"+lista.get(i).getPuesto());
+		}
+		
+	}
 	
 }
 

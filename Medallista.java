@@ -1,17 +1,17 @@
 
 public class Medallista {
 	int cedula;
-	String tipo;
+	int tipo;
 	int edad;
 	float peso;
 	int altura;
 	int celular;
 	String direccion;
-	String puesto;	
+	int puesto;	
 	int numero;
 	String nombre;
 	String apellido;
-	public Medallista(String nombre, String apellido, String tipo, int edad, float peso, int altura, int i, String direccion, String puesto) {
+	public Medallista(String nombre, String apellido, int tipo, int edad, float peso, int altura, int i, String direccion, int puesto) {
 	       this.nombre=nombre;
 	       this.apellido=apellido;
 	       this.tipo=tipo;
@@ -29,10 +29,10 @@ public class Medallista {
 	public void setCedula(int cedula) {
 		this.cedula = cedula;
 	}
-	public String getTipo() {
+	public int getTipo() {
 		return tipo;
 	}
-	public void setTipo(String tipo) {
+	public void setTipo(int tipo) {
 		this.tipo = tipo;
 	}
 	public int getEdad() {
@@ -65,10 +65,10 @@ public class Medallista {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-	public String getPuesto() {
+	public int getPuesto() {
 		return puesto;
 	}
-	public void setPuesto(String puesto) {
+	public void setPuesto(int puesto) {
 		this.puesto = puesto;
 	}
 	public int getNumero() {
